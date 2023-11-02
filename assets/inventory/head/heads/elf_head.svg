@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 128 128" width="128" height="128">
+	<!-- <circle cx="50%" cy="50%" r="33.3" stroke="hsl(0deg 0% 0.39%)" stroke-width="7.5" fill="white" /> -->
+	<circle cx="82.585" cy="78.435" r="27.638999999999996" stroke="hsl(0deg 0% 0.39%)" stroke-width="7.5" fill="white" />
+	<g stroke="hsl(0deg 0% 0.39%)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" style="z-index: 1;">
+		<path d="M 76.56584 78.27813 C 72.8408 68.54638, 60.6896 66.28878, 60.6896 66.28878 C 52.84278 64.25610999999999, 57.07329 70.66205000000001, 57.07329 70.66205000000001 C 59.20805000000001 73.91565, 58.82708 78.5595, 58.82708 78.5595 C 59.71019999999999 85.03018, 64.37563 87.24462, 64.37563 87.24462" fill="white" />
+	</g>
+</svg>

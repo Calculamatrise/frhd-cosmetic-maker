@@ -1,0 +1,71 @@
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+	}
+}
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	letter-spacing: -0.02em;
+}
+
+svg {
+	stroke: black;
+	stroke-width: 4;
+}
+
+#preview {
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 50%;
+	height: 128px;
+	position: sticky;
+	top: 0;
+	width: 128px;
+}
+
+.preview {
+	margin: auto;
+	text-align: center;
+	width: fit-content;
+}
+
+.grid {
+	display: grid;
+	gap: 0.4em;
+	grid-gap: 0.4em;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.categories {
+	margin: auto;
+	max-width: 65vw;
+}
+
+.radio-label > input[type="radio"] {
+	display: none;
+}
+
+.options .option {
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 50%;
+	box-sizing: border-box;
+	max-height: 64px;
+	max-width: 64px;
+	overflow: hidden;
+	padding: 0.5em;
+}
+
+.options img, .options svg {
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+}
+
+.options .option:has(> input[type="radio"]:checked) {
+	box-shadow: 0px 0 0 4px green;
+}
