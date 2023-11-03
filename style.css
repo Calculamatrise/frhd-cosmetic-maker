@@ -2,6 +2,18 @@
 	:root {
 		color-scheme: dark;
 	}
+
+	.icon {
+		stroke: white !important;
+	}
+
+	#preview, .preview-wrapper, .options .option {
+		background-color: hsl(0, 0%, 18%) !important;
+	}
+
+	/* .options img, .options svg {
+		filter: drop-shadow(0px 0px 4px hsl(0deg 0% 100% / 50%));
+	} */
 }
 
 html {
@@ -12,10 +24,10 @@ h1 {
 	letter-spacing: -0.02em;
 }
 
-svg {
-	/* stroke: black; */
-	/* stroke-width: 4; */
-}
+/* svg {
+	stroke: black;
+	stroke-width: 4;
+} */
 
 #preview {
 	aspect-ratio: 1;
@@ -50,13 +62,13 @@ svg {
 	display: grid;
 	gap: 0.4em;
 	grid-gap: 0.4em;
-	grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .categories {
 	gap: 2rem;
 	grid-gap: 2rem;
-	grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	margin: auto;
 	max-width: 65vw;
 }
@@ -70,7 +82,7 @@ svg {
 }
 
 .options {
-	grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
 }
 
 .options .option {
@@ -85,10 +97,15 @@ svg {
 }
 
 .options img, .options svg {
+	filter: drop-shadow(0px 0px 4px hsl(0deg 0% 50% / 50%));
 	height: 100%;
 	width: 100%;
 }
 
 .options .option:has(> input[type="radio"]:checked) {
-	box-shadow: 0px 0 0 3px #009900;
+	box-shadow: 0px 0 0 2px #009900;
+}
+
+.icon {
+	filter: none !important;
 }

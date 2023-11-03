@@ -14,12 +14,16 @@ for (const option of document.querySelectorAll('input[name="hat"]')) {
 updatePreview();
 
 async function updatePreview() {
-	let parser = new DOMParser();
 	let head = document.querySelector('input[name="head"]:checked + img');
 	let hat = document.querySelector('input[name="hat"]:checked + img');
 	let combined = [];
-	head && (combined.push(...await fetch(head.getAttribute('src')).then(r => r.text()).then(r => parser.parseFromString(r, 'image/svg+xml')).then(r => r.querySelector('svg').children)));
-	hat && (combined.push(...await fetch(hat.getAttribute('src')).then(r => r.text()).then(r => parser.parseFromString(r, 'image/svg+xml')).then(r => r.querySelector('svg').children)));
+	head && (combined.push(...await getItem(head)));
+	hat && (combined.push(...await getItem(hat)));
 	console.log('hello', head, hat, combined)
 	preview.replaceChildren(...combined);
+}
+
+const parser = new DOMParser();
+function getItem(image) {
+	return fetch(image.getAttribute('src')).then(r => r.text()).then(r => parser.parseFromString(r, 'image/svg+xml')).then(r => r.querySelector('svg').children);
 }

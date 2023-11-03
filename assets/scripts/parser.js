@@ -62,11 +62,15 @@ function parseScript(script) {
 					}
 					break;
 				case 'bezierCurveTo':
-					let lastFunction = currentPath.functions.at(-1);
+					var lastFunction = currentPath.functions.at(-1);
 					if (lastFunction.endsWith(arguments.slice(0, 2).join(' '))) {
 						currentPath.functions.push('Q ' + arguments.slice(2).map((coord, index, coords) => {
 							return coord + (index % 2 && index < coords.length - 1 ? ',' : '')
 						}).join(' '));
+					} else if (currentPath.functions[0].endsWith(arguments.slice(-2))) {
+						currentPath.functions.push('Q ' + arguments.slice(0, -2).map((coord, index, coords) => {
+							return coord + (index % 2 && index < coords.length - 1 ? ',' : '')
+						}).join(' '), 'Z');
 					}
 
 					currentPath.functions.push('C ' + arguments.map((coord, index, coords) => {
@@ -74,10 +78,11 @@ function parseScript(script) {
 					}).join(' '));
 					break;
 				case 'closePath':
-					currentPath.functions.length > 0 && currentPath.functions.push('Z');
+					currentPath.functions.length > 0 && currentPath.functions.at(-1) !== 'Z' && currentPath.functions.push('Z');
 					break;
 				case 'lineTo':
-					currentPath.functions.push('L ' + arguments.join(' '));
+					var lastFunction = currentPath.functions.at(-1);
+					lastFunction && lastFunction.endsWith(arguments.join(' ')) || currentPath.functions.push('L ' + arguments.join(' '));
 					break;
 				case 'moveTo':
 					currentPath.functions.push('M ' + arguments.join(' '));
