@@ -14,36 +14,106 @@
 	<div class="preview">
 		<h1>Free Rider HD Cosmetic Designer</h1>
 	<!-- 	<canvas id="view"></canvas> -->
-		<svg xmlns="http://www.w3.org/2000/svg" id="preview" viewbox="0 0 128 128"></svg>
+		<div class="preview-wrapper">
+			<svg xmlns="http://www.w3.org/2000/svg" id="preview" viewbox="0 0 128 128"></svg>
+		</div>
 	</div>
 	<div class="grid categories">
-		<div>
+		<div data-id="heads">
 			<h4>Head Type</h4>
 			<div class="grid options">
-				<!-- 	upload button for custom heads	 -->
+				<label class="option file-label" style="padding: 0.75rem;"><input type="file" name="hat" id="classic" checked>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100" viewBox="0 0 100 100" width="100">
+						<path d="M 15 85 L 85 85 M 50 65 L 50 15 M 30 35 L 50 15 L 70 35" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" />
+					</svg>
+				</label>
 				<label class="option radio-label"><input type="radio" name="head" id="classic" checked>
 					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 128 128">
 						<circle cx="50%" cy="50%" r="30.3px" stroke="black" stroke-width="7" fill="none" />
 						<line x1="40px" y1="70px" x2="112px" y2="50px" stroke="black" stroke-linecap="round" stroke-width="12" />
 					</svg>
 				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="block">
+					<img src="assets/inventory/head/heads/block.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="chicken">
+					<img src="assets/inventory/head/heads/chicken.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="clown">
+					<img src="assets/inventory/head/heads/clown.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="devil">
+					<img src="assets/inventory/head/heads/devil.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="dragon">
+					<img src="assets/inventory/head/heads/dragon.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<!-- <label class="option radio-label"><input type="radio" name="head" id="elf">
+					<img src="assets/inventory/head/heads/elf.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="head" id="emma">
+					<img src="assets/inventory/head/heads/emma.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label> -->
+				<label class="option radio-label"><input type="radio" name="head" id="horse">
+					<img src="assets/inventory/head/heads/horse.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
 			</div>
 		</div>
-		<div>
+		<div data-id="hats">
 			<h4>Hats</h4>
 			<div class="grid options heads">
-				<!-- 	upload button for custom hats	 -->
+				<label class="option file-label" style="padding: 0.75rem;"><input type="file" name="hat" id="classic" checked>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100" viewBox="0 0 100 100" width="100">
+						<path d="M 15 85 L 85 85 M 50 65 L 50 15 M 30 35 L 50 15 L 70 35" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" />
+					</svg>
+				</label>
 				<label class="option radio-label"><input type="radio" name="hat" id="classic" checked>
 					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 128 128">
 						<circle cx="50%" cy="50%" r="30.3px" stroke="black" stroke-width="7" fill="none" />
 						<line x1="40px" y1="70px" x2="112px" y2="50px" stroke="black" stroke-linecap="round" stroke-width="12" />
 					</svg>
 				</label>
-				<label class="option radio-label"><input type="radio" name="hat" id="classic">
+				<label class="option radio-label"><input type="radio" name="hat" id="backward">
 					<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 128 128">
 						<circle cx="50%" cy="50%" r="30.3px" stroke="black" stroke-width="7" fill="none" />
 						<line x1="16px" y1="84px" x2="88px" y2="52px" stroke="black" stroke-linecap="round" stroke-width="12" />
 					</svg>
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="elf">
+					<img src="assets/inventory/head/hats/elf_hat.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="emma">
+					<img src="assets/inventory/head/hats/emma_hat.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="heart_antlers">
+					<img src="assets/inventory/head/hats/heart_antlers.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="leprechaun_hat">
+					<img src="assets/inventory/head/hats/leprechaun_hat.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="lovestruck_beanie">
+					<img src="assets/inventory/head/hats/lovestruck_beanie.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="afro">
+					<img src="assets/inventory/head/hair/afro.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="astronaut">
+					<img src="assets/inventory/head/helmets/astronaut_helmet.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<!-- <label class="option radio-label"><input type="radio" name="head" id="astronaut>
+					<img src="assets/inventory/head/ball_cap.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label> -->
+				<label class="option radio-label"><input type="radio" name="hat" id="bmx_helmet">
+					<img src="assets/inventory/head/helmets/bmx_helmet.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="">
+					<img src="assets/inventory/head/helmets/downhill_flames.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="">
+					<img src="assets/inventory/head/helmets/downhill_splash.svg" alt="assets/inventory/head/heads/classic.svg">
+				</label>
+				<label class="option radio-label"><input type="radio" name="hat" id="">
+					<img src="assets/inventory/head/helmets/downhill.svg" alt="assets/inventory/head/heads/classic.svg">
 				</label>
 			</div>
 		</div>
