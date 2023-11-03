@@ -47,8 +47,11 @@ function parseScript(script) {
 				}
 			}
 		} else {
-			let arguments = line.replace(/.*\(|\).*/g, '');
+			let arguments = line.replace(/.*\(|\).*/g, '').split(/\s*,\s*/);
 			switch(line.replace(/(?<=\w)[^A-Za-z]+/, '')) {
+				case 'arc':
+					arguments[4] % 2 * Math.PI < 1 && paths.push('<circle cx="' + arguments[0] + '" cy="' + arguments[1] + '" r="' + arguments[2] + '" />');
+					break;
 				case 'beginPath':
 				case 'fill':
 				case 'stroke':
@@ -59,18 +62,25 @@ function parseScript(script) {
 					}
 					break;
 				case 'bezierCurveTo':
-					currentPath.functions.push('C ' + arguments.split(/\s*,\s*/).map((coord, index, coords) => {
+					let lastFunction = currentPath.functions.at(-1);
+					if (lastFunction.endsWith(arguments.slice(0, 2).join(' '))) {
+						currentPath.functions.push('Q ' + arguments.slice(2).map((coord, index, coords) => {
+							return coord + (index % 2 && index < coords.length - 1 ? ',' : '')
+						}).join(' '));
+					}
+
+					currentPath.functions.push('C ' + arguments.map((coord, index, coords) => {
 						return coord + (index % 2 && index < coords.length - 1 ? ',' : '')
 					}).join(' '));
 					break;
 				case 'closePath':
-					currentPath.functions.push('Z');
+					currentPath.functions.length > 0 && currentPath.functions.push('Z');
 					break;
 				case 'lineTo':
-					currentPath.functions.push('L ' + arguments.replace(/\s*,\s*/, ' '));
+					currentPath.functions.push('L ' + arguments.join(' '));
 					break;
 				case 'moveTo':
-					currentPath.functions.push('M ' + arguments.replace(/\s*,\s*/, ' '));
+					currentPath.functions.push('M ' + arguments.join(' '));
 					break;
 			}
 		}
